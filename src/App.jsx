@@ -10,8 +10,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LanguageSelection />} />
         <Route path="/auth-choice" element={<AuthChoice />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/citizen/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
+  
   );
 }
