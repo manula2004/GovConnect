@@ -29,7 +29,7 @@ export default function LoginPage() {
     <div
       style={{
         textAlign: "center",
-        marginTop: "6rem",
+        marginTop: "4rem",
         padding: "0 1rem",
         position: "relative"
       }}
@@ -38,7 +38,7 @@ export default function LoginPage() {
       <div
         style={{
           position: "absolute",
-          top: "1rem",
+          top: "-3rem",
           left: "1rem",
           cursor: "pointer",
           color: "#033EA1"
@@ -107,7 +107,7 @@ export default function LoginPage() {
           style={{
             fontSize: "0.9rem",
             color: "#555",
-            textAlign: "right",
+            textAlign: "left",
             width: "100%"
           }}
         >
@@ -116,10 +116,11 @@ export default function LoginPage() {
             style={{
               color: "#033EA1",
               cursor: "pointer"
+              
             }}
             onClick={() => navigate('/forgot-password')}
           >
-            Reset now
+            <b>Reset now</b>
           </span>
         </div>
 
