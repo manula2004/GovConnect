@@ -41,12 +41,12 @@
 }
 
 .left-icon .form-input {
-  padding-left: 52px;
+  padding-left: 48px;
 }
 
 /* Right icon variant (used for password) */
 .right-icon .input-icon {
-  right: 52px; /* Extra space for toggle button */
+  right: 16px; /* Extra space for toggle button */
 }
 
 .right-icon .form-input {

@@ -5,9 +5,9 @@ import PasswordInput from "../../components/PasswordInput";
 import Button from '../../components/Button';
 import Logo from '../../components/Logo';
 import EmailIcon from '../../assets/Icons/EmailIcon';
-import BackIcon from '../../assets/Icons/BackIcon'; // you'll need to create/import this
+import BackIcon from '../../assets/Icons/BackIcon';
 
-const LoginPage = () => {
+export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -26,56 +26,110 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="container login-container">
-      {/* Back arrow */}
-      <div className="login-back" onClick={() => navigate(-1)}>
-        <img src={BackIcon} alt="Back" />
+    <div
+      style={{
+        textAlign: "center",
+        marginTop: "6rem",
+        padding: "0 1rem",
+        position: "relative"
+      }}
+    >
+      {/* Back icon */}
+      <div
+        style={{
+          position: "absolute",
+          top: "1rem",
+          left: "1rem",
+          cursor: "pointer",
+          color: "#033EA1"
+        }}
+        onClick={() => navigate(-1)}
+      >
+        <BackIcon />
       </div>
-        {/* Logo */}
-        <Logo width="250px" className="login-logo" />
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="login-form">
-          {error && <div className="login-error">{error}</div>}
+      {/* Logo */}
+      <Logo width="250px" />
 
-          <InputWithIcon
-            icon={EmailIcon}
-            iconPosition="right"
-            type="email"
-            placeholder="Enter email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className={error && !email ? 'error' : ''}
-          />
+      <h1
+        style={{
+          fontSize: "1.5rem",
+          marginTop: "0.5rem",
+          marginBottom: "1.5rem",
+          color: "#1a202c"
+        }}
+      >
+        Login to Your Account
+      </h1>
 
-          <PasswordInput
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className={error && !password ? 'error' : ''}
-          />
-
-          {/* Forgot password */}
-          <div className="login-forgot">
-            Forgot Password?{' '}
-            <span
-              className="login-reset-link"
-              onClick={() => navigate('/forgot-password')}
-            >
-              Reset now
-            </span>
+      {/* Form */}
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+          alignItems: "center",
+          width: "100%",
+          maxWidth: "300px",
+          margin: "0 auto"
+        }}
+      >
+        {error && (
+          <div
+            style={{
+              color: "#dc2626",
+              fontSize: "0.9rem",
+              textAlign: "center"
+            }}
+          >
+            {error}
           </div>
+        )}
 
-          {/* Login button */}
-          <div className="login-actions">
-            <Button type="submit" className="btn-primary">
-              Login
-            </Button>
-          </div>
-        </form>
-      
+        <InputWithIcon
+          icon={EmailIcon}
+          iconPosition="right"
+          type="email"
+          placeholder="Enter email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+
+        <PasswordInput
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        {/* Forgot password */}
+        <div
+          style={{
+            fontSize: "0.9rem",
+            color: "#555",
+            textAlign: "right",
+            width: "100%"
+          }}
+        >
+          Forgot Password?{' '}
+          <span
+            style={{
+              color: "#033EA1",
+              cursor: "pointer"
+            }}
+            onClick={() => navigate('/forgot-password')}
+          >
+            Reset now
+          </span>
+        </div>
+
+        {/* Login button */}
+        <Button
+          label="Log in"
+          type="submit"
+          style={{ width: "100%" }}
+        />
+      </form>
     </div>
   );
-};
-
-export default LoginPage;
+}
