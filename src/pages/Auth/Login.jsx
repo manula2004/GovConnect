@@ -118,7 +118,7 @@ export default function LoginPage() {
               cursor: "pointer"
               
             }}
-            onClick={() => navigate('/forgot-password')}
+            onClick={() => navigate("/reset-password")}
           >
             <b>Reset now</b>
           </span>
