@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import EyeIcon from '../assets/Icons/EyeIcon';
-import './InputWithIcon.css';
+import EyeIcon from './EyeIcon';
+import './FormInput.css';
 
 const PasswordInput = ({ ...props }) => {
   const [visible, setVisible] = useState(false);
