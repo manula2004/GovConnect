@@ -128,6 +128,7 @@ export default function LoginPage() {
         <Button
           label="Log in"
           type="submit"
+          onClick={() => navigate("/citizen/Dashboard")}
           style={{ width: "100%" }}
         />
       </form>

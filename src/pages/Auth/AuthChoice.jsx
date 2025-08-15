@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Logo from "../../components/Logo";
+import BackIcon from '../../assets/Icons/BackIcon';
 
 export default function AuthChoice() {
   const navigate = useNavigate();
@@ -12,6 +13,18 @@ export default function AuthChoice() {
       marginTop: "6rem",
       padding: "0 1rem" // Consistent padding with LanguageSelection
     }}>
+    <div
+        style={{
+          position: "absolute",
+          top: "-3rem",
+          left: "1rem",
+          cursor: "pointer",
+          color: "#033EA1"
+        }}
+        onClick={() => navigate(-1)}
+      >
+        <BackIcon />
+      </div>
       <Logo width="250px" /> {/* Same logo size as LanguageSelection */}
       
       <h1 style={{

@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InputWithIcon from "../../components/InputWithIcon";
+import PasswordInput from "../../components/PasswordInput";
 import Button from '../../components/Button';
 import Logo from '../../components/Logo';
 import BackIcon from '../../assets/Icons/BackIcon';
 
-export default function EnterCodePage() {
-  const [code, setCode] = useState('');
+export default function SetNewPasswordPage() {
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!code) {
-      setError('Please enter the code');
+    if (!newPassword || !confirmPassword) {
+      setError('Please fill in all fields');
       return;
     }
 
-    console.log('Code entered:', { code });
-    navigate('/set-new-password');
-  };
+    if (newPassword !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
 
-  const handleResendCode = () => {
-    console.log('Resend code request for email');
-    // Add logic to resend code if needed
+    console.log('New password set:', { newPassword });
+    navigate('/login');
   };
 
   return (
@@ -61,7 +63,7 @@ export default function EnterCodePage() {
           color: "#1a202c"
         }}
       >
-        Enter the Code
+        Set New Password
       </h1>
 
       {/* Form */}
@@ -89,41 +91,21 @@ export default function EnterCodePage() {
           </div>
         )}
 
-        <p style={{ fontSize: "0.9rem", color: "#555", marginBottom: "1rem" }}>
-          Enter the code that was sent to your email
-        </p>
-
-        <InputWithIcon
-          icon={null} // No icon for code input, adjust as needed
-          type="text"
-          placeholder="Enter code"
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
+        <PasswordInput
+          placeholder="Enter new password"
+          value={newPassword}
+          onChange={(e) => setNewPassword(e.target.value)}
         />
 
-        <div
-          style={{
-            fontSize: "0.9rem",
-            color: "#555",
-            textAlign: "center",
-            width: "100%"
-          }}
-        >
-          Didn't get the code?{' '}
-          <span
-            style={{
-              color: "#033EA1",
-              cursor: "pointer"
-            }}
-            onClick={handleResendCode}
-          >
-            <b>Resend</b>
-          </span>
-        </div>
+        <PasswordInput
+          placeholder="Confirm password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
 
         {/* Submit button */}
         <Button
-          label="Submit"
+          label="Set New Password"
           type="submit"
           style={{ width: "100%" }}
         />

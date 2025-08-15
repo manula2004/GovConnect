@@ -13,11 +13,6 @@ export default function EnterCodePage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!code) {
-      setError('Please enter the code');
-      return;
-    }
-
     console.log('Code entered:', { code });
     navigate('/set-new-password');
   };
