@@ -1,7 +1,5 @@
 import React from "react";
 
-export default function Register() {
-    return (
-        <div>Register page</div>
-    );
+export default function Login() {
+  return <h2>Login Page</h2>;
 }
