@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import EmailIcon from '../assets/Icons/EmailIcon.jsx';
+import EmailIcon from '../assets/Icons/EmailIcon';
 import './InputWithIcon.css';
 
 const InputWithIcon = ({ 
