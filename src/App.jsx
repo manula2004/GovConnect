@@ -1,7 +1,15 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LanguageSelection from "./pages/Common/LanguageSelection";
+import Dashboard from "./pages/Citizen/Dashboard";
 
 export default function App() {
-    return (
-        <div>App page</div>
-    );
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LanguageSelection />} />
+        <Route path="/citizen/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
+  );
 }
