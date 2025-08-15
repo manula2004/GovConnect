@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EyeIcon from './EyeIcon';
+import EyeIcon from "../../assets/Icons/EyeIcon";
 import './FormInput.css';
 
 const PasswordInput = ({ ...props }) => {

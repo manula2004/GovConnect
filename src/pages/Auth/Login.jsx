@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import InputWithIcon from "../../components/InputWithIcon";
-import PasswordInput from "../../components/PasswordInput";
-import Button from '../components/Button';
-import Logo from '../components/Logo';
-import EmailIcon from '../assets/icons/EmailIcon';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import InputWithIcon from "../../components/InputWithIcon";  // Changed from "../components"
+import PasswordInput from "../../components/PasswordInput";  // Changed from "../components"
+import Button from "../../components/Button";                // Changed from "../components"
+import Logo from "../../components/Logo";
+import EmailIcon from '../assets/Icons/EmailIcon';
+
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
