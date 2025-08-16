@@ -43,7 +43,7 @@ export default function App() {
   <Route path="/MedicalStaff/AppointmentRequests" element={<MedicalStaffAppointmentRequests />} />
   <Route path="/LicenseStaff/dashboard" element={<LicenseStaffDashboard />} />
   <Route path="/LicenseStaff/appointment" element={<AppointmentRequests />} />
-        <Route path="/PassportStaff/dashboard" element={<PassportStaffDashboard />} />
+  <Route path="/PassportStaff/dashboard" element={<PassportStaffDashboard />} />
       </Routes>
     </Router>
   );
