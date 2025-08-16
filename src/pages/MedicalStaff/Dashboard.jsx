@@ -2,28 +2,19 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import Logo from '../../components/Logo';
-import { ArrowLeft, Droplets } from 'lucide-react';
+import { ArrowLeft, Droplets, User, FileText, Activity } from 'lucide-react';
 
-const MedicalStaff = () => {
+const MedicalStaffWelcome = () => {
   const navigate = useNavigate();
   const handleGoBack = () => navigate(-1);
 
-  const handleViewPatientDetails = (patientId) => {
-    console.log('Viewing details for patient:', patientId);
-    // Add your patient details navigation logic here
+  const handleReviewClick = () => {
+  navigate('/MedicalStaff/AppointmentRequests');
   };
 
-  const handleReserveSlot = (patientId) => {
-    console.log('Reserving slot for patient:', patientId);
-    // Add your slot reservation logic here
+  const handleReportsClick = () => {
+  navigate('/MedicalStaff/MedicalReports');
   };
-
-  const appointments = [
-    { id: 1, name: "Patient's Name" },
-    { id: 2, name: "Patient's Name" },
-    { id: 3, name: "Patient's Name" },
-    { id: 4, name: "Patient's Name" }
-  ];
 
   return (
     <div style={styles.body}>
@@ -39,25 +30,68 @@ const MedicalStaff = () => {
             <h1 style={styles.title}>Medical Staff</h1>
           </div>
         </div>
+        
         <div style={styles.content}>
-          <h2 style={styles.sectionTitle}>Appointments</h2>
-          {appointments.map((appointment) => (
-            <div key={appointment.id} style={styles.appointmentCard}>
-              <div style={styles.patientName}>{appointment.name}</div>
-              <div 
-                style={styles.patientDetails} 
-                onClick={() => handleViewPatientDetails(appointment.id)}
-              >
-                Patient's Details
+          {/* Profile Section */}
+          <div style={styles.profileSection}>
+            <div style={styles.profileIcon}>
+              <User size={48} color="#033ea1" />
+            </div>
+            <h2 style={styles.welcomeText}>Welcome</h2>
+          </div>
+
+          {/* Action Cards */}
+          <div style={styles.actionsContainer}>
+            {/* Review Card */}
+            <div style={styles.actionCard}>
+              <div style={styles.cardIcon}>
+                <FileText size={32} color="#033ea1" />
               </div>
-              <button
-                style={styles.reserveButton}
-                onClick={() => handleReserveSlot(appointment.id)}
+              <button 
+                style={styles.actionButton}
+                onClick={handleReviewClick}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#022d7a';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = '#033ea1';
+                }}
+                onMouseDown={(e) => {
+                  e.target.style.transform = 'translateY(1px)';
+                }}
+                onMouseUp={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                }}
               >
-                Reserve slot
+                Review
               </button>
             </div>
-          ))}
+
+            {/* Reports Card */}
+            <div style={styles.actionCard}>
+              <div style={styles.cardIcon}>
+                <Activity size={32} color="#033ea1" />
+              </div>
+              <button 
+                style={styles.actionButton}
+                onClick={handleReportsClick}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#022d7a';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = '#033ea1';
+                }}
+                onMouseDown={(e) => {
+                  e.target.style.transform = 'translateY(1px)';
+                }}
+                onMouseUp={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                }}
+              >
+                Reports
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -70,6 +104,7 @@ const styles = {
     backgroundColor: '#f5f5f5',
     padding: '20px',
     margin: 0,
+    minHeight: '100vh'
   },
   container: {
     maxWidth: '900px',
@@ -78,76 +113,102 @@ const styles = {
     borderRadius: '16px',
     boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
     padding: '32px',
+    minHeight: '80vh'
   },
   header: {
+    backgroundColor: 'white',
+    padding: '20px',
     display: 'flex',
     alignItems: 'center',
-    marginBottom: '32px',
+    justifyContent: 'center',
+    position: 'relative',
+    borderBottom: '1px solid #e5e5e5'
   },
   backArrow: {
+    position: 'absolute',
+    left: '20px',
     cursor: 'pointer',
-    marginRight: '16px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   headerContent: {
     display: 'flex',
-    alignItems: 'center',
-    gap: '16px',
+    flexDirection: 'column',
+    alignItems: 'center'
   },
   dropletIcon: {
-    marginLeft: '8px',
-  },
-  title: {
-    fontSize: '2rem',
-    fontWeight: '700',
-    color: '#033ea1',
-    marginLeft: '8px',
-  },
-  sectionTitle: {
-    fontSize: '1.25rem',
-    fontWeight: '600',
-    color: '#033ea1',
-    marginBottom: '20px',
-    margin: '0 0 20px 0',
-  },
-  appointmentCard: {
-    backgroundColor: '#f8f9fa',
-    borderRadius: '12px',
-    padding: '20px',
-    marginBottom: '16px',
-    border: '1px solid #e5e5e5'
-  },
-  patientName: {
-    color: '#000000',
-    fontSize: '16px',
-    fontWeight: '600',
     marginBottom: '8px'
   },
-  patientDetails: {
-    color: '#47a7ff',
-    fontSize: '14px',
-    marginBottom: '16px',
-    cursor: 'pointer',
-    textDecoration: 'underline'
+  title: {
+    color: '#000000',
+    fontSize: '24px',
+    fontWeight: '700',
+    textAlign: 'center',
+    margin: 0
   },
-  reserveButton: {
-  backgroundColor: '#033ea1',
-  color: 'white',
-  border: 'none',
-  borderRadius: '8px',
-  padding: '1rem',
-  fontSize: '16px',
-  fontWeight: '600',
-  width: '100% !important',
-  minWidth: '180px !important',
-  maxWidth: 'none !important',
-  boxSizing: 'border-box',
-  cursor: 'pointer',
-  display: 'block !important',
-  justifyContent: 'center !important',
-  alignItems: 'center !important',
-  textAlign: 'center !important',
-  transition: 'background-color 0.2s ease, transform 0.1s ease'
+  content: {
+    padding: '40px 20px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  profileSection: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginBottom: '60px'
+  },
+  profileIcon: {
+    width: '80px',
+    height: '80px',
+    borderRadius: '50%',
+    border: '3px solid #033ea1',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: '16px'
+  },
+  welcomeText: {
+    color: '#000000',
+    fontSize: '20px',
+    fontWeight: '600',
+    margin: 0
+  },
+  actionsContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '40px',
+    width: '100%',
+    maxWidth: '200px'
+  },
+  actionCard: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '16px',
+    padding: '20px',
+    backgroundColor: '#f8f9fa',
+    borderRadius: '12px',
+    border: '1px solid #e5e5e5'
+  },
+  cardIcon: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  actionButton: {
+    backgroundColor: '#033ea1',
+    color: 'white',
+    border: 'none',
+    borderRadius: '8px',
+    padding: '12px 32px',
+    fontSize: '16px',
+    fontWeight: '600',
+    cursor: 'pointer',
+    transition: 'background-color 0.2s ease, transform 0.1s ease',
+    minWidth: '120px'
   }
 };
 
-export default MedicalStaff;
+export default MedicalStaffWelcome;
