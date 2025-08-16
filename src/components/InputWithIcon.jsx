@@ -4,13 +4,12 @@ import EmailIcon from '../assets/Icons/EmailIcon';
 import './InputWithIcon.css';
 
 
-const InputWithIcon = ({
+const InputWithIcon = ({ 
   type = 'text',
   placeholder = '',
   iconColor = '#033EA1',
   iconPosition = 'right',
-  icon: IconComponent,
-  ...inputProps
+  ...inputProps 
 }) => {
   return (
     <div className={`input-with-icon ${iconPosition}-icon`}>
@@ -21,7 +20,7 @@ const InputWithIcon = ({
         {...inputProps}
       />
       <span className="input-icon" style={{ color: iconColor }}>
-        {IconComponent ? <IconComponent /> : <EmailIcon />}
+        <EmailIcon />
       </span>
     </div>
   );
@@ -33,7 +32,6 @@ InputWithIcon.propTypes = {
   placeholder: PropTypes.string,
   iconColor: PropTypes.string,
   iconPosition: PropTypes.oneOf(['left', 'right']),
-  icon: PropTypes.elementType,
 };
 
 export default InputWithIcon;

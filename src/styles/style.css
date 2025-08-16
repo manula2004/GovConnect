@@ -1,3 +1,38 @@
+/* ===== CITIZEN DASHBOARD BUTTONS ===== */
+.dashboard-btn {
+  min-width: 260px;
+  max-width: 260px;
+  min-height: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+/* ===== DASHBOARD BUTTON ICONS ===== */
+.btn-icon-left {
+  display: flex;
+  align-items: center;
+  margin-right: 0.75rem;
+  height: 24px;
+  width: 24px;
+}
+
+.btn-icon-right {
+  display: flex;
+  align-items: center;
+  margin-left: 0.75rem;
+}
+
+.btn-primary {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
 /* ===== GLOBAL STYLES ===== */
 :root {
   --primary-blue: #033EA1;
