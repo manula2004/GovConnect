@@ -66,7 +66,7 @@ export default function PassportServices() {
         />
         <Button
           label="Track Application System"
-          onClick={() => navigate("/citizen/passport/track")}
+          onClick={() => navigate("/citizen/passport/TrackPassport")}
           iconRight="›"
           className="dashboard-btn"
         />

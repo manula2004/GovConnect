@@ -54,7 +54,7 @@ export default function AuthChoice() {
         />
         <Button 
           label="Sign Up" 
-          onClick={() => navigate("/register")} 
+          onClick={() => navigate("/auth/adminDashboard")} 
           style={{ width: "100%" }}
         />
       </div>

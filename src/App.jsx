@@ -1,3 +1,8 @@
+import MedicalStaffDashboard from "./pages/MedicalStaff/Dashboard";
+import LicenseStaffDashboard from "./pages/LicenseStaff/Dashboard";
+import PassportStaffDashboard from "./pages/PassportStaff/Dashboard";
+import AdminDashboard from "./pages/Auth/adminDashboard";
+import TrackPassport from "./pages/Citizen/passport/TrackPassport";
 import MedicalAppointment from "./pages/Citizen/medical/appointment";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -25,10 +30,14 @@ export default function App() {
   <Route path="/citizen/dashboard" element={<Dashboard />} />
   <Route path="/citizen/passport" element={<PassportServices />} />
   <Route path="/citizen/passport/apply" element={<div>Apply for New Passport (placeholder)</div>} />
-  <Route path="/citizen/passport/track" element={<div>Track Application System (placeholder)</div>} />
+  <Route path="/citizen/passport/track" element={<TrackPassport />} />
   <Route path="/citizen/license" element={<LicenseServices />} />
   <Route path="/citizen/medical" element={<MedicalServices />} />
   <Route path="/citizen/medical/appointment" element={<MedicalAppointment />} />
+        <Route path="/auth/adminDashboard" element={<AdminDashboard />} />
+        <Route path="/MedicalStaff/dashboard" element={<MedicalStaffDashboard />} />
+        <Route path="/LicenseStaff/dashboard" element={<LicenseStaffDashboard />} />
+        <Route path="/PassportStaff/dashboard" element={<PassportStaffDashboard />} />
       </Routes>
     </Router>
   );
