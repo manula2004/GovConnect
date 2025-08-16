@@ -13,9 +13,7 @@ const RMVStaffWelcome = () => {
   };
 
   const handleBrowseUserClick = () => {
-    console.log('Navigating to Browse User page');
-    // Add your browse user navigation logic here
-    // navigate('/rmv-staff/browse-user');
+    navigate('/LicenseStaff/browse-user');
   };
 
   const handleIssueDeliveryClick = () => {
@@ -83,18 +81,10 @@ const RMVStaffWelcome = () => {
               <button 
                 style={styles.actionButton}
                 onClick={handleBrowseUserClick}
-                onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#022d7a';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#033ea1';
-                }}
-                onMouseDown={(e) => {
-                  e.target.style.transform = 'translateY(1px)';
-                }}
-                onMouseUp={(e) => {
-                  e.target.style.transform = 'translateY(0)';
-                }}
+                onMouseEnter={e => e.target.style.backgroundColor = '#022d7a'}
+                onMouseLeave={e => e.target.style.backgroundColor = '#033ea1'}
+                onMouseDown={e => e.target.style.transform = 'translateY(1px)'}
+                onMouseUp={e => e.target.style.transform = 'translateY(0)'}
               >
                 Browse User
               </button>

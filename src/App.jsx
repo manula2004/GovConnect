@@ -19,31 +19,54 @@ import LicenseServices from "./pages/Citizen/license/LicenseServices";
 import MedicalServices from "./pages/Citizen/medical/MedicalServices";
 import EnterCodePage from "./pages/Auth/EnterResetCode";
 import SetNewPasswordPage from "./pages/Auth/SetNewPasswordPage";
+import PassportStaffAdminReview from "./pages/PassportStaff/AdminReview";
+import PassportStaffBrowseUser from "./pages/PassportStaff/BrowseUser";
+import MedicalStaffBrowseUser from "./pages/MedicalStaff/BrowseUser";
+import LicenseStaffBrowseUser from "./pages/LicenseStaff/BrowseUser";
 
 export default function App() {
   return (
     <Router>
-  <Routes>
+      <Routes>
         <Route path="/" element={<LanguageSelection />} />
         <Route path="/auth-choice" element={<AuthChoice />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/set-new-password" element={<SetNewPasswordPage />} />
         <Route path="/enter-reset-code" element={<EnterCodePage />} />
-  <Route path="/citizen/dashboard" element={<Dashboard />} />
-  <Route path="/citizen/passport" element={<PassportServices />} />
-  <Route path="/citizen/passport/apply" element={<div>Apply for New Passport (placeholder)</div>} />
-  <Route path="/citizen/passport/track" element={<TrackPassport />} />
-  <Route path="/citizen/license" element={<LicenseServices />} />
-  <Route path="/citizen/medical" element={<MedicalServices />} />
-  <Route path="/citizen/medical/appointment" element={<MedicalAppointment />} />
+        <Route path="/citizen/dashboard" element={<Dashboard />} />
+        <Route path="/citizen/passport" element={<PassportServices />} />
+        <Route
+          path="/citizen/passport/apply"
+          element={<div>Apply for New Passport (placeholder)</div>}
+        />
+        <Route path="/citizen/passport/track" element={<TrackPassport />} />
+        <Route path="/citizen/license" element={<LicenseServices />} />
+        <Route path="/citizen/medical" element={<MedicalServices />} />
+        <Route path="/citizen/medical/appointment" element={<MedicalAppointment />} />
         <Route path="/auth/adminDashboard" element={<AdminDashboard />} />
-  <Route path="/MedicalStaff/dashboard" element={<MedicalStaffDashboard />} />
-  <Route path="/MedicalStaff/MedicalReports" element={<MedicalStaffMedicalReports />} />
-  <Route path="/MedicalStaff/AppointmentRequests" element={<MedicalStaffAppointmentRequests />} />
-  <Route path="/LicenseStaff/dashboard" element={<LicenseStaffDashboard />} />
-  <Route path="/LicenseStaff/appointment" element={<AppointmentRequests />} />
-  <Route path="/PassportStaff/dashboard" element={<PassportStaffDashboard />} />
+        <Route path="/MedicalStaff/dashboard" element={<MedicalStaffDashboard />} />
+        <Route
+          path="/MedicalStaff/MedicalReports"
+          element={<MedicalStaffMedicalReports />}
+        />
+        <Route
+          path="/MedicalStaff/AppointmentRequests"
+          element={<MedicalStaffAppointmentRequests />}
+        />
+        <Route path="/MedicalStaff/browse-user" element={<MedicalStaffBrowseUser />} />
+        <Route path="/LicenseStaff/dashboard" element={<LicenseStaffDashboard />} />
+        <Route path="/LicenseStaff/appointment" element={<AppointmentRequests />} />
+        <Route path="/PassportStaff/dashboard" element={<PassportStaffDashboard />} />
+        <Route
+          path="/PassportStaff/admin-review"
+          element={<PassportStaffAdminReview />}
+        />
+        <Route
+          path="/PassportStaff/browse-user"
+          element={<PassportStaffBrowseUser />}
+        />
+        <Route path="/LicenseStaff/browse-user" element={<LicenseStaffBrowseUser />} />
       </Routes>
     </Router>
   );

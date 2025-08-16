@@ -121,8 +121,7 @@ export default function PassportStaff() {
     // Add your review navigation logic here
   };
   const handleBrowseUser = () => {
-    console.log('Navigating to browse user section');
-    // Add your browse user navigation logic here
+    navigate('/PassportStaff/browse-user');
   };
   return (
     <div style={styles.body}>

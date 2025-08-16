@@ -16,6 +16,10 @@ const MedicalStaffWelcome = () => {
   navigate('/MedicalStaff/MedicalReports');
   };
 
+  const handleBrowseUserClick = () => {
+    navigate('/MedicalStaff/browse-user');
+  };
+
   return (
     <div style={styles.body}>
       <div style={styles.container}>
@@ -89,6 +93,23 @@ const MedicalStaffWelcome = () => {
                 }}
               >
                 Reports
+              </button>
+            </div>
+
+            {/* Browse User Card */}
+            <div style={styles.actionCard}>
+              <div style={styles.cardIcon}>
+                <User size={32} color="#033ea1" />
+              </div>
+              <button 
+                style={styles.actionButton}
+                onClick={handleBrowseUserClick}
+                onMouseEnter={e => e.target.style.backgroundColor = '#022d7a'}
+                onMouseLeave={e => e.target.style.backgroundColor = '#033ea1'}
+                onMouseDown={e => e.target.style.transform = 'translateY(1px)'}
+                onMouseUp={e => e.target.style.transform = 'translateY(0)'}
+              >
+                Browse User
               </button>
             </div>
           </div>
