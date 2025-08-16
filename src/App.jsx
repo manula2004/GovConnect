@@ -5,8 +5,8 @@ import Login from "./pages/Auth/Login";
 import ResetPasswordPage from "./pages/Auth/ResetPassword"; // Corrected import
 import LanguageSelection from "./pages/Common/LanguageSelection";
 import Dashboard from "./pages/Citizen/Dashboard";
-import PassportServices from "./pages/Citizen/PassportServices";
-import LicenseServices from "./pages/Citizen/LicenseServices";
+import PassportServices from "./pages/Citizen/passport/PassportServices";
+import LicenseServices from "./pages/Citizen/license/LicenseServices";
 import EnterCodePage from "./pages/Auth/EnterResetCode";
 import SetNewPasswordPage from "./pages/Auth/SetNewPasswordPage";
 
