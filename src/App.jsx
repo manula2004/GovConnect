@@ -1,5 +1,6 @@
 import MedicalStaffDashboard from "./pages/MedicalStaff/Dashboard";
 import LicenseStaffDashboard from "./pages/LicenseStaff/Dashboard";
+import AppointmentRequests from "./pages/LicenseStaff/AppointmentRequests";
 import PassportStaffDashboard from "./pages/PassportStaff/Dashboard";
 import AdminDashboard from "./pages/Auth/adminDashboard";
 import TrackPassport from "./pages/Citizen/passport/TrackPassport";
@@ -36,7 +37,8 @@ export default function App() {
   <Route path="/citizen/medical/appointment" element={<MedicalAppointment />} />
         <Route path="/auth/adminDashboard" element={<AdminDashboard />} />
         <Route path="/MedicalStaff/dashboard" element={<MedicalStaffDashboard />} />
-        <Route path="/LicenseStaff/dashboard" element={<LicenseStaffDashboard />} />
+  <Route path="/LicenseStaff/dashboard" element={<LicenseStaffDashboard />} />
+  <Route path="/LicenseStaff/appointment" element={<AppointmentRequests />} />
         <Route path="/PassportStaff/dashboard" element={<PassportStaffDashboard />} />
       </Routes>
     </Router>

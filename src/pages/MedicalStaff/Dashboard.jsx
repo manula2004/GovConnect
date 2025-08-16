@@ -66,7 +66,7 @@ const MedicalStaff = () => {
 
 const styles = {
   body: {
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    fontFamily: 'Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     backgroundColor: '#f5f5f5',
     padding: '20px',
     margin: 0,
