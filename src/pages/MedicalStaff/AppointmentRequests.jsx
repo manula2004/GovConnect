@@ -6,7 +6,7 @@ import { ArrowLeft, Droplets } from 'lucide-react';
 
 const MedicalStaff = () => {
   const navigate = useNavigate();
-  const handleGoBack = () => navigate(-1);
+  const handleGoBack = () => navigate('/medical-staff/dashboard');
 
   const handleViewPatientDetails = (patientId) => {
     console.log('Viewing details for patient:', patientId);

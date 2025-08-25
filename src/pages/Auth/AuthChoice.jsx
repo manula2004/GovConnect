@@ -13,7 +13,7 @@ export default function AuthChoice() {
       marginTop: "6rem",
       padding: "0 1rem" // Consistent padding with LanguageSelection
     }}>
-    <div
+      <div
         style={{
           position: "absolute",
           top: "-3rem",
@@ -21,7 +21,7 @@ export default function AuthChoice() {
           cursor: "pointer",
           color: "#033EA1"
         }}
-        onClick={() => navigate(-1)}
+        onClick={() => navigate("/")}
       >
         <BackIcon />
       </div>
@@ -54,7 +54,7 @@ export default function AuthChoice() {
         />
         <Button 
           label="Sign Up" 
-          onClick={() => navigate("/auth/adminDashboard")} 
+          onClick={() => navigate("/register")} 
           style={{ width: "100%" }}
         />
       </div>

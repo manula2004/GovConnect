@@ -9,7 +9,7 @@ const MedicalStaffReports = () => {
   const [patientNic, setPatientNic] = useState("");
   const [uploadedFile, setUploadedFile] = useState(null);
 
-  const handleGoBack = () => navigate(-1);
+  const handleGoBack = () => navigate('/medical-staff/dashboard');
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];

@@ -25,7 +25,7 @@ export default function BookAppointment() {
     console.log("Appointment booked:", formData);
 
     alert("Appointment request submitted!");
-    navigate(-1); // Back after submit
+    navigate('/citizen/medical'); // Back after submit
   };
 
   return (
@@ -46,7 +46,7 @@ export default function BookAppointment() {
           cursor: "pointer",
           color: "#033EA1",
         }}
-        onClick={() => navigate(-1)}
+        onClick={() => navigate('/citizen/medical')}
       >
         <BackIcon />
       </div>

@@ -94,7 +94,24 @@ export default function CitizenDashboard() {
           justifyContent: "center"
         }}
       >
-        <img src={ProfileIcon} alt="Profile Icon" width="36px" height="36px" style={{ color: "#033EA1" }} />
+        <img 
+          src={ProfileIcon} 
+          alt="Profile Icon" 
+          width="36px" 
+          height="36px" 
+          style={{ 
+            color: "#033EA1",
+            cursor: "pointer",
+            transition: "transform 0.2s ease"
+          }}
+          onClick={() => navigate("/citizen/profile")}
+          onMouseEnter={(e) => {
+            e.target.style.transform = "scale(1.1)";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = "scale(1)";
+          }}
+        />
       </div>
     </div>
   );

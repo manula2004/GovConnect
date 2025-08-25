@@ -115,14 +115,13 @@ const styles = {
 
 export default function PassportStaff() {
   const navigate = useNavigate();
-  const handleGoBack = () => navigate(-1);
+  const handleGoBack = () => navigate('/login');
   const handleReview = () => {
     console.log('Navigating to review section');
     // Add your review navigation logic here
   };
   const handleBrowseUser = () => {
-    console.log('Navigating to browse user section');
-    // Add your browse user navigation logic here
+    navigate('/passport-staff/browse-users');
   };
   return (
     <div style={styles.body}>

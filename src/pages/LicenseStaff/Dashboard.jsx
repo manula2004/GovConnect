@@ -6,22 +6,18 @@ import { ArrowLeft, Droplets, User, CheckCircle, Users, Truck } from 'lucide-rea
 
 const RMVStaffWelcome = () => {
   const navigate = useNavigate();
-  const handleGoBack = () => navigate(-1);
+  const handleGoBack = () => navigate('/login');
 
   const handleAppointmentClick = () => {
   navigate('/LicenseStaff/appointment');
   };
 
   const handleBrowseUserClick = () => {
-    console.log('Navigating to Browse User page');
-    // Add your browse user navigation logic here
-    // navigate('/rmv-staff/browse-user');
+    navigate('/license-staff/browse-users');
   };
 
   const handleIssueDeliveryClick = () => {
-    console.log('Navigating to Issue & Delivery page');
-    // Add your issue & delivery navigation logic here
-    // navigate('/rmv-staff/issue-delivery');
+    navigate('/license-staff/update-status');
   };
 
   return (

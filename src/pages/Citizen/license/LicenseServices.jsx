@@ -25,7 +25,7 @@ export default function LicenseServices() {
           cursor: "pointer",
           color: "#033EA1"
         }}
-        onClick={() => navigate(-1)}
+        onClick={() => navigate('/citizen/dashboard')}
       >
         <BackIcon />
       </div>
@@ -60,7 +60,7 @@ export default function LicenseServices() {
       >
         <Button
           label="Get a New Driving License"
-          onClick={() => navigate("/citizen/license/new")}
+          onClick={() => navigate("/citizen/license/apply")}
           iconRight="›"
           style={{ width: "100%" }}
         />

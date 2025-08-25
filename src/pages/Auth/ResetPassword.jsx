@@ -45,7 +45,7 @@ export default function EnterCodePage() {
           cursor: "pointer",
           color: "#033EA1"
         }}
-        onClick={() => navigate(-1)}
+        onClick={() => navigate('/login')}
       >
         <BackIcon />
       </div>

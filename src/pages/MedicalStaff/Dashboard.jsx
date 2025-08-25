@@ -2,11 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import Logo from '../../components/Logo';
-import { ArrowLeft, Droplets, User, FileText, Activity } from 'lucide-react';
+import { ArrowLeft, Droplets, User, FileText, Activity, Users } from 'lucide-react';
 
 const MedicalStaffWelcome = () => {
   const navigate = useNavigate();
-  const handleGoBack = () => navigate(-1);
+  const handleGoBack = () => navigate('/login');
 
   const handleReviewClick = () => {
   navigate('/MedicalStaff/AppointmentRequests');
@@ -14,6 +14,10 @@ const MedicalStaffWelcome = () => {
 
   const handleReportsClick = () => {
   navigate('/MedicalStaff/MedicalReports');
+  };
+
+  const handleBrowseUsersClick = () => {
+    navigate('/medical-staff/browse-users');
   };
 
   return (
@@ -89,6 +93,31 @@ const MedicalStaffWelcome = () => {
                 }}
               >
                 Reports
+              </button>
+            </div>
+
+            {/* Browse Users Card */}
+            <div style={styles.actionCard}>
+              <div style={styles.cardIcon}>
+                <Users size={32} color="#033ea1" />
+              </div>
+              <button 
+                style={styles.actionButton}
+                onClick={handleBrowseUsersClick}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = '#022d7a';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = '#033ea1';
+                }}
+                onMouseDown={(e) => {
+                  e.target.style.transform = 'translateY(1px)';
+                }}
+                onMouseUp={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                }}
+              >
+                Browse Users
               </button>
             </div>
           </div>

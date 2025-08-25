@@ -6,7 +6,7 @@ import { ArrowLeft, Droplets, Download, Check, X } from 'lucide-react';
 
 const RMVStaffReview = () => {
   const navigate = useNavigate();
-  const handleGoBack = () => navigate(-1);
+  const handleGoBack = () => navigate('/license-staff/dashboard');
 
   const handleDownload = (applicationId) => {
     console.log('Downloading application:', applicationId);

@@ -22,7 +22,34 @@ export default function LoginPage() {
     }
 
     console.log('Login attempt with:', { email, password });
-    navigate('/citizen/dashboard');
+    
+    // Role-based navigation based on username/ID pattern
+    const username = email.toLowerCase();
+    
+    // Extract the first character to determine user type
+    const firstChar = username.charAt(0);
+    
+    if (/^[0-9]/.test(username)) {
+      // NIC starting with number -> Citizen
+      console.log('Citizen login detected');
+      navigate('/citizen/dashboard');
+    } else if (firstChar === 'm') {
+      // ID starting with 'M' -> Medical Staff
+      console.log('Medical staff login detected');
+      navigate('/medical-staff/dashboard');
+    } else if (firstChar === 'p') {
+      // ID starting with 'P' -> Passport Staff
+      console.log('Passport staff login detected');
+      navigate('/passport-staff/dashboard');
+    } else if (firstChar === 'r') {
+      // ID starting with 'R' -> License Staff (RMV)
+      console.log('License staff login detected');
+      navigate('/license-staff/dashboard');
+    } else {
+      // Default to citizen dashboard for other cases
+      console.log('Default to citizen dashboard');
+      navigate('/citizen/dashboard');
+    }
   };
 
   return (
@@ -43,7 +70,7 @@ export default function LoginPage() {
           cursor: "pointer",
           color: "#033EA1"
         }}
-        onClick={() => navigate(-1)}
+        onClick={() => navigate('/auth-choice')}
       >
         <BackIcon />
       </div>
@@ -90,8 +117,8 @@ export default function LoginPage() {
         <InputWithIcon
           icon={EmailIcon}
           iconPosition="right"
-          type="email"
-          placeholder="Enter email"
+          type="text"
+          placeholder="Enter NIC or Staff ID"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
